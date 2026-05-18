@@ -1,0 +1,407 @@
+<!-- contact.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - Training Trains</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+        }
+
+        /* Navigation */
+
+        nav{
+            background:#0d1b2a;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .logo a{
+            color:white;
+            text-decoration:none;
+            font-size:28px;
+            font-weight:bold;
+        }
+
+        .menu{
+            list-style:none;
+            display:flex;
+            gap:20px;
+        }
+
+        .menu li a{
+            color:white;
+            text-decoration:none;
+            transition:0.3s;
+        }
+
+        .menu li a:hover{
+            color:#00b4d8;
+        }
+
+        /* Header */
+
+        .header{
+            background:#0077b6;
+            color:white;
+            text-align:center;
+            padding:80px 20px;
+        }
+
+        .header h1{
+            font-size:50px;
+            margin-bottom:15px;
+        }
+
+        /* Contact Form */
+
+        .contact-section{
+            padding:60px 20px;
+            display:flex;
+            justify-content:center;
+        }
+
+        .contact-box{
+            background:white;
+            width:100%;
+            max-width:600px;
+            padding:40px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .contact-box h2{
+            text-align:center;
+            margin-bottom:25px;
+            color:#0077b6;
+        }
+
+        .input-group{
+            margin-bottom:20px;
+        }
+
+        .input-group label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:bold;
+        }
+
+        .input-group input,
+        .input-group textarea{
+            width:100%;
+            padding:12px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            font-size:16px;
+        }
+
+        .input-group textarea{
+            resize:none;
+            height:120px;
+        }
+
+        .btn{
+            width:100%;
+            padding:14px;
+            background:#0077b6;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:18px;
+            cursor:pointer;
+            transition:0.3s;
+        }
+
+        .btn:hover{
+            background:#023e8a;
+        }
+
+        .error{
+            color:red;
+            font-size:14px;
+            margin-top:5px;
+        }
+
+        .success{
+            color:green;
+            text-align:center;
+            margin-top:20px;
+            font-size:18px;
+        }
+
+        /* Footer */
+
+        footer{
+            background:#0d1b2a;
+            color:white;
+            text-align:center;
+            padding:25px;
+        }
+
+        footer a{
+            color:#00b4d8;
+            text-decoration:none;
+            margin:0 10px;
+        }
+
+        @media(max-width:768px){
+
+            nav{
+                flex-direction:column;
+                gap:15px;
+            }
+
+            .menu{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .header h1{
+                font-size:35px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+
+    <nav>
+
+        <div class="logo">
+            <a href="index.html">Training Trains</a>
+        </div>
+
+        <ul class="menu">
+            <li><a href="hhead.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internship.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- Header -->
+
+    <section class="header">
+
+        <h1>Contact Us</h1>
+
+        <p>
+            Get in touch with Training Trains
+        </p>
+
+    </section>
+
+    <!-- Contact Form -->
+
+    <section class="contact-section">
+
+        <div class="contact-box">
+
+            <h2>Send Message</h2>
+
+            <form id="contactForm">
+
+                <!-- Name -->
+
+                <div class="input-group">
+
+                    <label>Full Name</label>
+
+                    <input type="text" id="name">
+
+                    <div class="error" id="nameError"></div>
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="input-group">
+
+                    <label>Email Address</label>
+
+                    <input type="text" id="email">
+
+                    <div class="error" id="emailError"></div>
+
+                </div>
+
+                <!-- Phone -->
+
+                <div class="input-group">
+
+                    <label>Phone Number</label>
+
+                    <input type="text" id="phone">
+
+                    <div class="error" id="phoneError"></div>
+
+                </div>
+
+                <!-- Message -->
+
+                <div class="input-group">
+
+                    <label>Message</label>
+
+                    <textarea id="message"></textarea>
+
+                    <div class="error" id="messageError"></div>
+
+                </div>
+
+                <!-- Button -->
+
+                <button type="submit" class="btn">
+                    Submit
+                </button>
+
+                <div class="success" id="successMsg"></div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+
+        <h3>Training Trains</h3>
+
+        <p>
+            Software Training & Internship Institute
+        </p>
+
+        <br>
+
+        <a href="https://www.facebook.com/traininngtrains/" target="_blank">
+            Facebook
+        </a>
+
+        <a href="https://www.instagram.com/training_trains/" target="_blank">
+            Instagram
+        </a>
+
+        <p style="margin-top:15px;">
+            © 2026 Training Trains
+        </p>
+
+    </footer>
+
+    <!-- JavaScript Validation -->
+
+    <script>
+
+        const form = document.getElementById("contactForm");
+
+        form.addEventListener("submit", function(e){
+
+            e.preventDefault();
+
+            // Input Values
+
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let message = document.getElementById("message").value.trim();
+
+            // Error Elements
+
+            let nameError = document.getElementById("nameError");
+            let emailError = document.getElementById("emailError");
+            let phoneError = document.getElementById("phoneError");
+            let messageError = document.getElementById("messageError");
+            let successMsg = document.getElementById("successMsg");
+
+            // Clear Errors
+
+            nameError.innerHTML = "";
+            emailError.innerHTML = "";
+            phoneError.innerHTML = "";
+            messageError.innerHTML = "";
+            successMsg.innerHTML = "";
+
+            let isValid = true;
+
+            // Name Validation
+
+            if(name === ""){
+                nameError.innerHTML = "Please enter your name";
+                isValid = false;
+            }
+
+            // Email Validation
+
+            let emailPattern =
+            /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+            if(email === ""){
+                emailError.innerHTML =
+                "Please enter your email";
+                isValid = false;
+            }
+            else if(!email.match(emailPattern)){
+                emailError.innerHTML =
+                "Invalid email address";
+                isValid = false;
+            }
+
+            // Phone Validation
+
+            let phonePattern = /^[0-9]{10}$/;
+
+            if(phone === ""){
+                phoneError.innerHTML =
+                "Please enter phone number";
+                isValid = false;
+            }
+            else if(!phone.match(phonePattern)){
+                phoneError.innerHTML =
+                "Phone number must be 10 digits";
+                isValid = false;
+            }
+
+            // Message Validation
+
+            if(message === ""){
+                messageError.innerHTML =
+                "Please enter your message";
+                isValid = false;
+            }
+
+            // Success Message
+
+            if(isValid){
+
+                successMsg.innerHTML =
+                "Form submitted successfully!";
+
+                form.reset();
+
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
