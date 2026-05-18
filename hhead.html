@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Training Trains - Home</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f9fafb, #dbeafe);
+      color: #333;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(90deg, #ff6a00, #ee0979);
+      color: white;
+      text-align: center;
+      padding: 25px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    header h1 {
+      font-size: 36px;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 18px;
+    }
+
+    /* NAVBAR */
+    nav {
+      background: #1e3a8a;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 10px 20px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: yellow;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      padding: 70px 20px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      margin: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .hero h2 {
+      font-size: 42px;
+      margin-bottom: 15px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .hero button {
+      padding: 12px 25px;
+      border: none;
+      background: yellow;
+      color: black;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .hero button:hover {
+      background: orange;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      background: white;
+      margin: 30px;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .about h3 {
+      font-size: 30px;
+      margin-bottom: 15px;
+      color: #2563eb;
+    }
+
+    .about p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* INTERNSHIP CARDS */
+    .internships {
+      padding: 30px;
+      text-align: center;
+    }
+
+    .internships h3 {
+      font-size: 30px;
+      margin-bottom: 25px;
+      color: #1e3a8a;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      padding: 25px;
+      border-radius: 12px;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card:nth-child(1) { background: #ff4d4d; }
+    .card:nth-child(2) { background: #00b894; }
+    .card:nth-child(3) { background: #0984e3; }
+    .card:nth-child(4) { background: #6c5ce7; }
+    .card:nth-child(5) { background: #fdcb6e; color: black; }
+    .card:nth-child(6) { background: #e84393; }
+
+    /* CONTACT */
+    .contact {
+      background: white;
+      margin: 30px;
+      padding: 30px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact h3 {
+      color: #ff6a00;
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .contact p {
+      font-size: 18px;
+      margin: 8px 0;
+    }
+
+    /* FOOTER */
+    footer {
+      background: linear-gradient(90deg, #141e30, #243b55);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 30px;
+      font-size: 18px;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 28px;
+      }
+
+      .hero h2 {
+        font-size: 30px;
+      }
+
+      nav a {
+        display: block;
+        margin: 8px 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>Training Trains</h1>
+    <p>Build Skills. Shape Future.</p>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+            <li><a href="hhead.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="internship.html">Courses</a></li>
+            <li><a href="contact.html">Contact</a></li>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <h2>Welcome to Training Trains</h2>
+    <p>Your gateway to real-time project experience and career growth.</p>
+    <button onclick="alert('Welcome to Training Trains!')">Get Started</button>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <h3>About Us</h3>
+    <p>
+      Training Trains provides practical internships for students and freshers
+      in trending technologies like Web Development, UI/UX, IOT, App Development,
+      and Digital Marketing.
+    </p>
+  </section>
+
+  <!-- INTERNSHIPS -->
+  <section class="internships" id="internships">
+    <h3>Internship Domains</h3>
+
+    <div class="grid">
+      <div class="card">Mobile App Development</div>
+      <div class="card">IOT</div>
+      <div class="card">Web Development</div>
+      <div class="card">Digital Marketing</div>
+      <div class="card">App Development</div>
+      <div class="card">UI/UX Design</div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <h3>Contact Us</h3>
+    <p>🌐 Website: www.trainingtrains.com</p>
+    <p>📞 Mobile: 9025010144</p>
+    <p>📧 Email: info@trainingtrains.com</p>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 Training Trains | All Rights Reserved
+  </footer>
+
+</body>
+</html>
