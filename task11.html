@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modern Firebase Contact Form</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Arial, sans-serif;
+    }
+
+    body{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:linear-gradient(135deg,#00c6ff,#0072ff);
+    }
+
+    .container{
+      width:400px;
+      background:white;
+      padding:35px;
+      border-radius:15px;
+      box-shadow:0 5px 20px rgba(0,0,0,0.3);
+    }
+
+    .container h2{
+      text-align:center;
+      margin-bottom:25px;
+      color:#0072ff;
+    }
+
+    .input-box{
+      margin-bottom:20px;
+    }
+
+    .input-box input,
+    .input-box textarea{
+      width:100%;
+      padding:14px;
+      border:1px solid #ccc;
+      border-radius:8px;
+      font-size:16px;
+      outline:none;
+      transition:0.3s;
+    }
+
+    .input-box input:focus,
+    .input-box textarea:focus{
+      border-color:#0072ff;
+      box-shadow:0 0 8px rgba(0,114,255,0.4);
+    }
+
+    textarea{
+      resize:none;
+      height:120px;
+    }
+
+    button{
+      width:100%;
+      padding:14px;
+      background:#0072ff;
+      color:white;
+      border:none;
+      border-radius:8px;
+      font-size:18px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    button:hover{
+      background:#005ad1;
+    }
+
+    #success{
+      margin-top:15px;
+      text-align:center;
+      color:green;
+      font-weight:bold;
+    }
+
+  </style>
+
+</head>
+<body>
+
+  <div class="container">
+
+    <h2>Contact Us</h2>
+
+    <form id="contactForm">
+
+      <div class="input-box">
+        <input
+          type="text"
+          id="name"
+          placeholder="Enter Your Name"
+          required
+        >
+      </div>
+
+      <div class="input-box">
+        <input
+          type="email"
+          id="email"
+          placeholder="Enter Your Email"
+          required
+        >
+      </div>
+
+      <div class="input-box">
+        <textarea
+          id="message"
+          placeholder="Enter Your Message"
+          required
+        ></textarea>
+      </div>
+
+      <button type="submit">
+        Send Message
+      </button>
+
+      <p id="success"></p>
+
+    </form>
+
+  </div>
+
+  <script type="module">
+
+    import { initializeApp }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+
+    import {
+      getDatabase,
+      ref,
+      push
+    }
+    from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+
+    // Firebase Config
+    const firebaseConfig = {
+
+      apiKey: "YOUR_API_KEY",
+
+      authDomain: "YOUR_PROJECT.firebaseapp.com",
+
+      databaseURL: "https://webfirebase-033-default-rtdb.firebaseio.com/",
+
+      projectId: "YOUR_PROJECT",
+
+      storageBucket: "YOUR_PROJECT.appspot.com",
+
+      messagingSenderId: "YOUR_ID",
+
+      appId: "YOUR_APP_ID"
+
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    // Initialize Database
+    const db = getDatabase(app);
+
+    // Form Submit
+    document.getElementById("contactForm")
+    .addEventListener("submit", function(e){
+
+      e.preventDefault();
+
+      const name =
+      document.getElementById("name").value;
+
+      const email =
+      document.getElementById("email").value;
+
+      const message =
+      document.getElementById("message").value;
+
+      // Save Data
+      push(ref(db, "contacts"), {
+
+        name:name,
+        email:email,
+        message:message
+
+      });
+
+      // Success Message
+      document.getElementById("success")
+      .innerHTML = "Message Sent Successfully!";
+
+      // Reset Form
+      document.getElementById("contactForm").reset();
+
+    });
+
+  </script>
+
+</body>
+</html>
