@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Website Testing Tool</title>
+
+  <style>
+
+    body{
+      font-family:Arial, sans-serif;
+      background:#f4f4f4;
+      margin:0;
+      padding:20px;
+    }
+
+    .container{
+      max-width:700px;
+      margin:auto;
+      background:white;
+      padding:20px;
+      border-radius:10px;
+      box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+      text-align:center;
+      color:#333;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      margin-top:15px;
+      border:1px solid #ccc;
+      border-radius:5px;
+      font-size:16px;
+    }
+
+    button{
+      width:100%;
+      padding:12px;
+      margin-top:15px;
+      background:blue;
+      color:white;
+      border:none;
+      border-radius:5px;
+      font-size:16px;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:darkblue;
+    }
+
+    .results{
+      margin-top:20px;
+      padding:15px;
+      border-radius:5px;
+      background:#fafafa;
+      border:1px solid #ddd;
+    }
+
+    .good{
+      color:green;
+      font-weight:bold;
+    }
+
+    .bad{
+      color:red;
+      font-weight:bold;
+    }
+
+    @media(max-width:768px){
+
+      body{
+        padding:10px;
+      }
+
+      .container{
+        padding:15px;
+      }
+
+      h1{
+        font-size:24px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Website Tester</h1>
+
+    <input type="text" id="url" placeholder="Enter website URL">
+
+    <button onclick="runTest()">
+      Run Website Test
+    </button>
+
+    <div class="results" id="results">
+      Waiting for test...
+    </div>
+
+  </div>
+
+  <script>
+
+    function runTest(){
+
+      const url = document.getElementById("url").value;
+      const results = document.getElementById("results");
+
+      if(url === ""){
+        results.innerHTML = "<span class='bad'>Please enter website URL</span>";
+        return;
+      }
+
+      // Fake Testing Logic
+
+      const mobileResponsive = Math.random() > 0.3;
+      const brokenLinks = Math.random() > 0.2;
+      const speedScore = Math.floor(Math.random() * 100);
+
+      results.innerHTML = `
+
+        <h2>Test Results</h2>
+
+        <p>
+          <strong>Website:</strong>
+          <a href="${url}" target="_blank">${url}</a>
+        </p>
+
+        <p>
+          <strong>Mobile Test:</strong>
+          <span class="${mobileResponsive ? 'good' : 'bad'}">
+            ${mobileResponsive ? 'Responsive' : 'Not Responsive'}
+          </span>
+        </p>
+
+        <p>
+          <strong>Link Test:</strong>
+          <span class="${brokenLinks ? 'good' : 'bad'}">
+            ${brokenLinks ? 'No Broken Links' : 'Broken Links Found'}
+          </span>
+        </p>
+
+        <p>
+          <strong>Speed Score:</strong>
+          <span class="${speedScore > 70 ? 'good' : 'bad'}">
+            ${speedScore}/100
+          </span>
+        </p>
+
+      `;
+    }
+
+  </script>
+
+</body>
+</html>
